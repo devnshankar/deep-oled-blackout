@@ -4,15 +4,11 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && touch docs/.nojekyll",
+    "build": "astro build",
     "preview": "astro preview",
-    "deploy": "astro build && gh-pages -d ../docs",
     "astro": "astro"
   },
   "dependencies": {
     "astro": "^5.10.1"
-  },
-  "devDependencies": {
-    "gh-pages": "^6.3.0"
   }
 }

@@ -16,6 +16,7 @@
   },
   "scripts": {
     "clean": "rimraf web-ext-artifacts",
-    "build": "npm run clean && web-ext build --source-dir=. --overwrite-dest --artifacts-dir=web-ext-artifacts"
+    "build": "npm run clean && web-ext build --source-dir=. --overwrite-dest --artifacts-dir=web-ext-artifacts && npm run landing-build",
+    "landing-build": "cd landing && npm run build"
   }
 }
