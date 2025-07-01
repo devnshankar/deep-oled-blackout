@@ -1,5 +1,6 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
 
-// https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+  outDir: 'docs',
+  base: '/deep-oled-blackout/', // this must match repo name if not using a custom domain
+});
