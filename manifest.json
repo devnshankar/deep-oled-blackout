@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Deep OLED Blackout",
-  "version": "1.0",
+  "version": "2.0.0",
   "description": "A true black Firefox theme optimized for OLED screens. Ultra-minimal, battery-friendly, and easy on the eyes.",
   "author": "Subhashankar Behera",
   "theme": {
