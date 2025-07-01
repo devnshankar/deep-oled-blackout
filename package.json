@@ -1,0 +1,21 @@
+{
+  "name": "deep-oled-blackout",
+  "version": "1.0.0",
+  "description": "True black OLED-optimized Firefox theme",
+  "author": "Subhashankar Behera",
+  "license": "MIT",
+  "keywords": [
+    "firefox",
+    "theme",
+    "oled",
+    "black"
+  ],
+  "devDependencies": {
+    "rimraf": "^5.0.5",
+    "web-ext": "^8.8.0"
+  },
+  "scripts": {
+    "clean": "rimraf web-ext-artifacts",
+    "build": "npm run clean && web-ext build --source-dir=. --overwrite-dest --artifacts-dir=web-ext-artifacts"
+  }
+}

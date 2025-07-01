@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "Deep OLED Blackout",
+  "version": "1.0",
+  "description": "A true black Firefox theme optimized for OLED screens. Ultra-minimal, battery-friendly, and easy on the eyes.",
+  "author": "Subhashankar Behera",
+  "theme": {
+    "colors": {
+      "frame": "#000000",
+      "tab_background_text": "#FFFFFF",
+      "tab_text": "#FFFFFF",
+      "tab_selected": "#000000",
+      "tab_line": "#FFFFFF",
+      "toolbar": "#000000",
+      "toolbar_text": "#FFFFFF",
+      "toolbar_field": "#000000",
+      "toolbar_field_text": "#FFFFFF",
+      "toolbar_field_border": "#333333",
+      "toolbar_field_focus": "#000000",
+      "toolbar_field_text_focus": "#FFFFFF",
+      "popup": "#000000",
+      "popup_text": "#FFFFFF",
+      "sidebar": "#000000",
+      "sidebar_text": "#FFFFFF",
+      "icons": "#FFFFFF",
+      "ntp_background": "#000000",
+      "ntp_text": "#FFFFFF",
+      "ntp_card_background": "#000000"
+    }
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "deep-oled-blackout@subhashankar.dev"
+    }
+  }
+}
