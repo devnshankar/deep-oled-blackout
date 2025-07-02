@@ -6,7 +6,10 @@ import "../styles/global.css";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="A pure black OLED Firefox theme that’s minimal, battery-efficient, and elegant." />
+    <meta
+      name="description"
+      content="A pure black OLED Firefox theme that's minimal, battery-efficient, and elegant."
+    />
     <title>Deep OLED Blackout – Firefox Theme</title>
     <link rel="icon" href="/favicon.ico" />
   </head>
@@ -23,18 +26,24 @@ import "../styles/global.css";
         >
           Install on Firefox
         </a>
-        <img
-          class="screenshot"
-          src="/assets/screenshot.png"
-          alt="Theme preview"
-        />
+        <div class="screenshot-container">
+          <img
+            class="screenshot"
+            src="https://github.com/devnshankar/deep-oled-blackout/blob/main/landing/public/assets/screenshot.png?raw=true"
+            alt="Theme preview"
+            onload="this.classList.add('loaded'); this.parentElement.classList.add('loaded');"
+          />
+        </div>
       </section>
-      <!-- <footer>
+      <footer>
         <p>
           Crafted by Subhashankar Behera ·
-          <a href="https://github.com/devnshankar/deep-oled-blackout" target="_blank">GitHub</a>
+          <a
+            href="https://github.com/devnshankar/deep-oled-blackout"
+            target="_blank">GitHub</a
+          >
         </p>
-      </footer> -->
+      </footer>
     </main>
   </body>
 </html>

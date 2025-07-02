@@ -20,6 +20,7 @@ body {
   align-items: center;
   padding: 1rem;
   overflow-x: hidden;
+  position: relative;
 }
 
 main {
@@ -29,6 +30,8 @@ main {
   animation: pop-fade 1s ease-out forwards;
   transform: scale(0.95);
   opacity: 0;
+  position: relative;
+  z-index: 2;
 }
 
 /* Typography */
@@ -58,18 +61,76 @@ main {
   margin-top: 2rem;
   transition: 0.3s ease;
 }
+
 .button:hover {
   background-color: #444;
   color: #fff;
 }
 
+/* Image Container */
+.screenshot-container {
+  margin: 2rem auto;
+  position: relative;
+  display: inline-block;
+  z-index: 3; /* Higher than shadow */
+}
+
 /* Image */
 .screenshot {
-  width: 100%;
   max-width: 100%;
-  border-radius: 1rem;
-  margin-top: 3rem;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.08);
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  z-index: 4; /* Highest z-index to ensure it's on top */
+}
+
+.screenshot.loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Full-screen shadow that blooms */
+.screenshot-container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(
+    circle at center, 
+    rgba(255,255,255,0.4) 0%, 
+    rgba(255,255,255,0.2) 30%,
+    rgba(255,255,255,0.1) 50%,
+    transparent 70%
+  );
+  transform: scale(0);
+  opacity: 0;
+  z-index: 1; /* Behind everything */
+  transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation: shadowBloom 4s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.screenshot-container.loaded::before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Continuous blooming animation */
+@keyframes shadowBloom {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0.9;
+  }
 }
 
 /* Footer */
@@ -79,7 +140,7 @@ footer {
   opacity: 0.5;
 }
 
-/* Bouncy Fade Animation */
+/* Main content animation */
 @keyframes pop-fade {
   0% {
     opacity: 0;
@@ -97,10 +158,11 @@ footer {
 
 /* Footer Link Style */
 footer a {
-  color: #888;
+  color: #c1c1c1;
   text-decoration: underline;
   transition: color 0.3s ease;
 }
+
 footer a:hover {
   color: #fff;
 }
